@@ -12,10 +12,10 @@ touch dir2/empty
 # создаём файл task/dir2/hello.sh с таким содержанием:
 # #!/bin/bash
 # echo "$1, привет!"
-echo -e '#!/bin/bash\necho "$1, привет!"' > task/dir2/hello.sh
+echo -e '#!/bin/bash\necho "$1, привет!"' > dir2/hello.sh
 
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
-chmod 764 task/dir2/hello.sh
+chmod 764 dir2/hello.sh
 
 # сохраняем список файлов task/dir2 в task/dir2/list.txt
 ls dir2 > dir2/list.txt
@@ -25,7 +25,7 @@ cp -r dir2/* dir3/dir4/
 
 # записываем в task/dir1/summary.txt список файлов с расширением *.txt
 # находящихся в task, включая поддиректории
-find task -type f -name "*.txt" > task/dir1/summary.txt
+find task -type f -name "*.txt" > dir1/summary.txt
 
 # дописываем в task/dir1/summary.txt содержимое task/dir2/list.txt
 cat dir2/list.txt >> dir1/summary.txt
